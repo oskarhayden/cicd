@@ -45,7 +45,6 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v5 # v5.0.0
         with:
-          context: . src/cicd
+          context: . /src/cicd
           push: true
-          tags: ${{ env.REGISTRY }}  \ $ {{github.actor }} \ ${{env.IMAGE_NAME}}:latest
-
+          tags: ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:latest
